@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://ye3jjp6bsf33"]
+
+[ext_resource type="Script" path="res://chat.gd" id="1_vt17y"]
+[ext_resource type="Texture2D" uid="uid://dro3skqbkf1s5" path="res://Assets/Chat.png" id="2_76ew2"]
+
+[node name="Chat" type="CanvasLayer"]
+script = ExtResource("1_vt17y")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_top = 456.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_76ew2")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Playerinput" type="LineEdit" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_right = 1152.0
+offset_bottom = 31.0
+
+[node name="Playername" type="Label" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "[Player]:"
+
+[node name="Personname" type="Label" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 0
+offset_top = 32.0
+offset_right = 40.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "[PersonName]:"
+
+[node name="AiChat" type="Label" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 120.0
+offset_top = 32.0
+offset_right = 1152.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[connection signal="focus_entered" from="NinePatchRect/Playerinput" to="." method="_on_playerinput_focus_entered"]
+[connection signal="focus_exited" from="NinePatchRect/Playerinput" to="." method="_on_playerinput_focus_exited"]

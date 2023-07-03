@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://j0xsucpilqwl"]
+
+[ext_resource type="Texture2D" uid="uid://yg43w0ix6lux" path="res://Assets/Mauer.png" id="1_m516t"]
+
+[node name="Zaun Groß" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-960, -276, 298, -276, 298, 953, 306, 953, 306, -296, -960, -296)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("1_m516t")

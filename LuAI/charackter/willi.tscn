@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cekdx38kl7gs5"]
+
+[ext_resource type="Script" path="res://willi.gd" id="1_538fu"]
+[ext_resource type="Texture2D" uid="uid://bmuxqukseq55w" path="res://Assets/icon.svg" id="2_hylfy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03dp4"]
+size = Vector2(16, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1nawl"]
+radius = 40.0
+
+[node name="Willi" type="Area2D"]
+script = ExtResource("1_538fu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.125, 0.25)
+texture = ExtResource("2_hylfy")
+
+[node name="Körper" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_03dp4")
+
+[node name="player detection" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1nawl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

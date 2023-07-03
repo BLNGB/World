@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfe7o0r1tdxx6"]
+
+[ext_resource type="Script" path="res://charackter/bauarbeiter.gd" id="1_diqrd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyrhk"]
+size = Vector2(16, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hcp6r"]
+radius = 40.0
+
+[node name="Bauarbeiter" type="StaticBody2D"]
+script = ExtResource("1_diqrd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Körper" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gyrhk")
+
+[node name="player detection" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hcp6r")

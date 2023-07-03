@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch4c6ov2cksir"]
+
+[ext_resource type="Texture2D" uid="uid://dbagboymeosk1" path="res://Assets/Haus1.png" id="1_fhbl5"]
+[ext_resource type="Texture2D" uid="uid://br8dmhgnrivhq" path="res://Assets/Haus1 nacht.png" id="2_oecvo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3he2y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fhbl5")
+}],
+"loop": true,
+"name": &"Day",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oecvo")
+}],
+"loop": true,
+"name": &"night",
+"speed": 5.0
+}]
+
+[node name="Haus1" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_3he2y")
+animation = &"Day"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-112, 160, 144, 160, 144, -128, -112, -128)

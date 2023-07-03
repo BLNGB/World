@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctiifsm2qo2cu"]
+
+[ext_resource type="Script" path="res://ludolf.gd" id="1_hbd6p"]
+[ext_resource type="Texture2D" uid="uid://bpe55kfqyfcyq" path="res://Assets/Ludolf.png" id="2_rerrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xq0jt"]
+size = Vector2(16, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3venb"]
+radius = 40.0
+
+[node name="ludolf" type="Area2D"]
+script = ExtResource("1_hbd6p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.08616e-07, 8.34465e-07)
+scale = Vector2(0.941176, 0.8)
+texture = ExtResource("2_rerrn")
+
+[node name="Körper" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xq0jt")
+metadata/_edit_lock_ = true
+
+[node name="player detection" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3venb")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

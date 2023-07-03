@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpxmkctpjupsd"]
+
+[ext_resource type="Texture2D" uid="uid://bbjpi0h7l126e" path="res://Assets/Zaun.png" id="1_cw268"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syo53"]
+size = Vector2(640, 30)
+
+[node name="Zaun" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_cw268")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_syo53")

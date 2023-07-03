@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://r6uha8o3polv"]
+
+[ext_resource type="Texture2D" uid="uid://du25c6r7pk415" path="res://Assets/Tree 1.png" id="1_voxa7"]
+
+[node name="Baum1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_voxa7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-22, 45, -8, 32, -4, 26, 7, 26, 8, 33, 16, 46, 5, 49, -10, 48, -19, 46)
